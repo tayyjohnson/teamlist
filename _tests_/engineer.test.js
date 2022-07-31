@@ -20,7 +20,7 @@ test('test to see if we receive the id # from getId()', () => {
 });
 
 test('test to see if we receive the email from getEmail()', () => {
-    expect(engineer.getEmail()).toBe('Jason@work.net');
+    expect(engineer.getEmail()).toBe('jason@work.net');
 });
 
 test('test to see if we receive the GiHub username from getGitHUb()', () => {
