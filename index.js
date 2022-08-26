@@ -7,7 +7,6 @@ const Engineer = require('./lib/Engineer');
 const generateSite = require('./src/generate-site.js');
 const teamMembers = [];
 
-//list that options that the creators has for their team
 const siteOptions = () => {
     return inquirer.prompt ([
         {
@@ -19,7 +18,6 @@ const siteOptions = () => {
     ])
     .then(userChoice => {
         switch (userChoice.menu) {
-            //after a case is chosen, the user will be directed to the associated function
             case 'add a manager':
                 managerInfo();
                 break;
@@ -30,13 +28,11 @@ const siteOptions = () => {
                 internInfo();
                  break;
             default:
-                //if the user is done entering information then the page will run using the create page function at the bottom of this code
                 createPage();
         };
     });
 };
 
-//function to collect info for a manager
 const managerInfo = () => {
     return inquirer.prompt([
         {
@@ -96,12 +92,10 @@ const managerInfo = () => {
         console.log(input);
         const manager = new Manager(input.name, input.employeeId, input.email, input.officeNumber);
         teamMembers.push(manager);
-        //send the user back tot he main menu
         siteOptions();
     });
 };
 
-//function to collect info for an engineer
 const engineerInfo = () => {
     return inquirer.prompt([
         {
@@ -161,12 +155,10 @@ const engineerInfo = () => {
         console.log(input);
         const engineer = new Engineer(input.name, input.employeeId, input.email, input.gitHub);
         teamMembers.push(engineer);
-        //returns user to the main menu
         siteOptions();
     });
 };
 
-//function to collect info for an intern
 const internInfo = () => {
     return inquirer.prompt([
         {
@@ -226,12 +218,11 @@ const internInfo = () => {
         console.log(input);
         const intern = new Intern(input.name, input.employeeId, input.email, input.school);
         teamMembers.push(intern);
-        //returns user to the main menu
         siteOptions();
     });
 
 };
-    //use above info to create the finished page
+    //Uses info entered to create finalized page
     const createPage = () => {
         fs.writeFileSync('./dist/index.html', generateSite(teamMembers)
 

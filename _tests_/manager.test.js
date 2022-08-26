@@ -1,8 +1,8 @@
+//When npm run test is ran in terminal, these parameters are tested to make sure they pass
+
 const Manager = require('../lib/Manager');
 const manager = new Manager('Elena', '21', 'elena@work.net', '1');
 
-
-//test to see if we a receiving the proper information
 test ('get the value from the new manager object', ()=> {
     expect(manager.name).toBe('Elena');
     expect(manager.id).toBe('21');
@@ -10,7 +10,6 @@ test ('get the value from the new manager object', ()=> {
     expect(manager.officeNumber).toBe('1')
 });
 
-//test each mathod to ensure that the correct information is being returned
 test('test to see if we receive the name from getName()', () => {
     expect(manager.getName()).toBe('Elena');
 });

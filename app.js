@@ -7,7 +7,7 @@ const Engineer = require('./lib/Engineer');
 const generateSite = require('./src/generate-site');
 const teamMembers = [];
 
-//list that options that the creators has for their team
+//Prompts the user for input/direction
 const siteOptions = () => {
     return inquirer.prompt ([
         {
@@ -19,7 +19,7 @@ const siteOptions = () => {
     ])
     .then(userChoice => {
         switch (userChoice.menu) {
-            //after a case is chosen, the user will be directed to the associated function
+            //After a choice is made, the user is directed to this menu
             case 'add a manager':
                 managerInfo();
                 break;
@@ -30,13 +30,13 @@ const siteOptions = () => {
                 internInfo();
                  break;
             default:
-                //if the user is done entering information then the page will run using the create page function at the bottom of this code
+                //Creates the page after the user indicates they are done inputting info
                 createPage();
         };
     });
 };
 
-//function to collect info for a manager
+//Collects manager's info
 const managerInfo = () => {
     return inquirer.prompt([
         {
@@ -96,12 +96,12 @@ const managerInfo = () => {
         console.log(input);
         const manager = new Manager(input.name, input.employeeId, input.email, input.officeNumber);
         teamMembers.push(manager);
-        //send the user back to the main menu
+        //Redirects user to main menu
         siteOptions();
     });
 };
 
-//function to collect info for an engineer
+//Collects info for engineer
 const engineerInfo = () => {
     return inquirer.prompt([
         {
@@ -161,12 +161,12 @@ const engineerInfo = () => {
         console.log(input);
         const engineer = new Engineer(input.name, input.employeeId, input.email, input.gitHub);
         teamMembers.push(engineer);
-        //returns user to the main menu
+        //Redirects to main menu
         siteOptions();
     });
 };
 
-//function to collect info for an intern
+//Collects info for intern
 const internInfo = () => {
     return inquirer.prompt([
         {
@@ -226,16 +226,16 @@ const internInfo = () => {
         console.log(input);
         const intern = new Intern(input.name, input.employeeId, input.email, input.school);
         teamMembers.push(intern);
-        //returns user to the main menu
+        //Redirects user to main menu
         siteOptions();
     });
 };
 
-//uses above info to create the finished page
+//Uses info entered to generate HTML page
 function createPage () {
     fs.writeFileSync('teamPage.html', generateSite(managerInfo, engineerInfo, internInfo));
     console.log('Your team page has been created!'); 
 };
 
-//call for the main menu function to be run
+//Calls for main function to be ran
 siteOptions();

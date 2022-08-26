@@ -1,8 +1,8 @@
+//When npm run test is ran in terminal, these parameters are tested to make sure they pass
+
 const Intern = require('../lib/Intern');
 const intern = new Intern('Damon', '28', 'damon@work.net', 'Mystic Falls High School');
 
-
-//test to see if we a receiving the proper information
 test ('get the value from the new intern object', ()=> {
     expect(intern.name).toBe('Damon');
     expect(intern.id).toBe('28');
@@ -10,7 +10,6 @@ test ('get the value from the new intern object', ()=> {
     expect(intern.school).toBe('Mystic Falls High School')
 });
 
-//test each method to ensure that the correct information is being returned
 test('test to see if we receive the name from getName()', () => {
     expect(intern.getName()).toBe('Damon');
 });
