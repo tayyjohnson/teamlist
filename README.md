@@ -11,4 +11,5 @@ When the user exits the application, the HTML is generated.
 
 https://drive.google.com/file/d/1DKIcXeKMLdE1L1ObIHyX95p_l8zkSswm/view
 
-![teamlist sample](https://user-images.githubusercontent.com/104907412/186042681-5739b77f-0a77-45b9-9eef-aaa823bcba7e.png)
+![teamlist sample](https://user-images.githubusercontent.com/104907412/186790446-fd1e014b-8d4c-4c6c-925c-b9bd3e2d7fc6.png)
+
