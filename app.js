@@ -55,7 +55,7 @@ const managerInfo = () => {
         {
             type: 'input',
             name : 'employeeId',
-            message: "What is the manager's employee ID?",
+            message: "What is the manager's ID?",
             validate : employeeId => {
                 if (employeeId) {
                     return true;

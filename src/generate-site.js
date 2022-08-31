@@ -78,7 +78,7 @@ module.exports = employeeStuff => {
 </head>
 <body>
     <header>
-        <h1> My Team </h1>
+        <h1> Team List </h1>
     </header>
     <main>
     ${generateTeam(employeeStuff)}
