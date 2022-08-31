@@ -14,19 +14,19 @@ const siteOptions = () => {
             type: 'list',
             name: 'menu',
             message: 'Please select the team member you would like to add:',
-            choices: ['add a manager', 'add an engineer', 'add an intern', 'finish building my team']
+            choices: ['Add a manager', 'Add an engineer', 'Add an intern', 'Thats a wrap!']
         }
     ])
     .then(userChoice => {
         switch (userChoice.menu) {
             //After a choice is made, the user is directed to this menu
-            case 'add a manager':
+            case 'Add a manager':
                 managerInfo();
                 break;
-            case 'add an engineer':
+            case 'Add an engineer':
                 engineerInfo();
                 break;
-            case 'add an intern':
+            case 'Add an intern':
                 internInfo();
                  break;
             default:
@@ -47,7 +47,7 @@ const managerInfo = () => {
                 if (name) {
                     return true;
                 }else {
-                    console.log('Please enter manager name!');
+                    console.log('Please enter manager name.');
                     return false;
                 }
             }
@@ -60,7 +60,7 @@ const managerInfo = () => {
                 if (employeeId) {
                     return true;
                 }else {
-                    console.log('Please enter manager ID #!');
+                    console.log('Please enter manager ID #.');
                     return false;
                 }
             }
@@ -73,7 +73,7 @@ const managerInfo = () => {
                 if (email) {
                     return true;
                 }else {
-                    console.log('Please enter manager email address!');
+                    console.log('Please enter manager email address.');
                     return false;
                 }
             }
@@ -86,7 +86,7 @@ const managerInfo = () => {
                 if (officeNumber) {
                     return true;
                 }else {
-                    console.log('Please enter manager office #!');
+                    console.log('Please enter manager office #.');
                     return false;
                 }
             }
@@ -112,7 +112,7 @@ const engineerInfo = () => {
                 if (name) {
                     return true;
                 }else {
-                    console.log('Please enter engineer name!');
+                    console.log('Please enter engineer name.');
                     return false;
                 }
             }
@@ -125,7 +125,7 @@ const engineerInfo = () => {
                 if (employeeId) {
                     return true;
                 }else {
-                    console.log('Please enter engineer ID #!');
+                    console.log('Please enter engineer ID #.');
                     return false;
                 }
             }
@@ -138,7 +138,7 @@ const engineerInfo = () => {
                 if (email) {
                     return true;
                 }else {
-                    console.log('Please enter engineer email address!');
+                    console.log('Please enter engineer email address.');
                     return false;
                 }
             }
@@ -151,7 +151,7 @@ const engineerInfo = () => {
                 if (gitHub) {
                     return true;
                 }else {
-                    console.log("Please enter engineer's GitHub username!");
+                    console.log("Please enter engineer's GitHub username.");
                     return false;
                 }
             }
@@ -177,7 +177,7 @@ const internInfo = () => {
                 if (name) {
                     return true;
                 }else {
-                    console.log('Please enter intern name!');
+                    console.log('Please enter intern name.');
                     return false;
                 }
             }
@@ -190,7 +190,7 @@ const internInfo = () => {
                 if (employeeId) {
                     return true;
                 }else {
-                    console.log('Please enter intern ID #!');
+                    console.log('Please enter intern ID #.');
                     return false;
                 }
             }
@@ -203,7 +203,7 @@ const internInfo = () => {
                 if (email) {
                     return true;
                 }else {
-                    console.log('Please enter intern email address!');
+                    console.log('Please enter intern email address.');
                     return false;
                 }
             }
@@ -216,7 +216,7 @@ const internInfo = () => {
                 if (school) {
                     return true;
                 }else {
-                    console.log("Please enter intern's school name!");
+                    console.log("Please enter intern's school name.");
                     return false;
                 }
             }
@@ -234,7 +234,7 @@ const internInfo = () => {
 //Uses info entered to generate HTML page
 function createPage () {
     fs.writeFileSync('teamPage.html', generateSite(managerInfo, engineerInfo, internInfo));
-    console.log('Your team page has been created!'); 
+    console.log('Your A-Team has been assembled!'); 
 };
 
 //Calls for main function to be ran
